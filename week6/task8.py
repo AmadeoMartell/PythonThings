@@ -17,8 +17,8 @@ class Question:
             q_answer = self.answers[self.num][1:]
             random.shuffle(q_answer)
             print(question, *q_answer, sep ="\n")
-    def give_answer(self, char='a'):
-        if (char + ".") in self.answers[len(self.answers) - 1][self.num]:
+    def give_answer(self, char=' '):
+        if (char) == self.answers[len(self.answers) - 1][self.num].lstrip()[0]:
             return 1
         else:
             return 0
@@ -46,8 +46,9 @@ def main():
         print()
         time.sleep(1)
 
-    print(f"\nИГРА ОКОНЧЕНА! {"Победитель игрок: 1" if players[0] > players[1] else "Победитель игрок: 2" if players[0] < players[1] else "НИЧЬЯ!"}")
-    print("--------------------ч--------------")
+    print("\nИГРА ОКОНЧЕНА!")
+    print("Победитель игрок: 1" if players[0] > players[1] else "Победитель игрок: 2" if players[0] < players[1] else "НИЧЬЯ!")
+    print("----------------------------------")
     print(f"Счет 1 игрока: {players[0]}/5")
     print(f"Счет 2 игрока: {players[1]}/5")
     print("----------------------------------")
